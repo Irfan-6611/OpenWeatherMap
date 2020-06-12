@@ -22,7 +22,7 @@ struct WeatherForecastViewModel {
     var tempMin: String
     var tempMax: String
     var weatherDescription: String
-    var icon: String
+    var iconName: String
     var windSpeed: Double
 }
 
@@ -41,12 +41,10 @@ class WeatherForecastPresenter{
 
 extension WeatherForecastPresenter:WeatherForecastPresenterProtocol {
     func interactor(_ interactor: WeatherForecastInteractorProtocol, didFetch object: WeatherForecastModle) {
-        let viewModel = WeatherForecastViewModel(tempMin: self.tempFormatter
-        .string(from: object.main.tempMin as NSNumber) ?? "",
-                                                 tempMax: self.tempFormatter
-                                                 .string(from: object.main.tempMax as NSNumber) ?? "",
+        let viewModel = WeatherForecastViewModel(tempMin: self.tempFormatter.string(from: object.main.tempMin as NSNumber) ?? "",
+                                                 tempMax: self.tempFormatter.string(from: object.main.tempMax as NSNumber) ?? "",
                                                  weatherDescription: object.weather[0].weatherDescription,
-                                                 icon: object.weather[0].icon,
+                                                 iconName: object.weather[0].icon,
                                                  windSpeed: object.wind.speed)
         
         weatherForecastView?.set(viewModel: viewModel)

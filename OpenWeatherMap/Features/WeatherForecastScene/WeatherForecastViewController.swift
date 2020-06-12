@@ -11,7 +11,6 @@ import GoogleMaps
 import GooglePlaces
 import CoreLocation
 
-
 /// Weather Forecast View Protocol
 protocol WeatherForecastViewProtocol: class {
     var presenter: WeatherForecastPresenter? { get set }
@@ -26,7 +25,10 @@ class WeatherForecastViewController: UIViewController {
 
     //MARK:- IBOutlets
     @IBOutlet weak var googleMapContainerView: UIView!
-    
+    @IBOutlet weak var weatherImageView: UIImageView!
+    @IBOutlet weak var tempratureLable: UILabel!
+    @IBOutlet weak var weatherDescription: UILabel!
+
     var presenter: WeatherForecastPresenter?
     var interactor: WeatherForecastInteractor?
     var router: WeatherForecastRouter?
@@ -184,7 +186,9 @@ extension WeatherForecastViewController: CLLocationManagerDelegate {
 
 extension WeatherForecastViewController: WeatherForecastViewProtocol{
     func set(viewModel: WeatherForecastViewModel) {
-        print(viewModel.windSpeed)
+        self.weatherImageView.image = UIImage(named: viewModel.iconName)
+        self.weatherDescription.text = viewModel.weatherDescription
+        self.tempratureLable.text = viewModel.tempMax
     }
     
 }

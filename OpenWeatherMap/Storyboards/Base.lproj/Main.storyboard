@@ -6,6 +6,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="HelveticaNeue.ttc">
+            <string>HelveticaNeue</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Weather Forecast View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -19,18 +24,77 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="15b-5E-qXt">
+                                <rect key="frame" x="0.0" y="44" width="414" height="175"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dubai" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vfa-OI-lNM">
+                                        <rect key="frame" x="15" y="15" width="39.5" height="17.5"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3:24 PM - Friday, 12 June" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KCr-CE-jkI">
+                                        <rect key="frame" x="15" y="40.5" width="172.5" height="17.5"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Clear Sky" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Hc-Ss-ViC">
+                                        <rect key="frame" x="175" y="89.5" width="64.5" height="17.5"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="VxU-op-rEQ">
+                                        <rect key="frame" x="107" y="117" width="200.5" height="50"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sunny" translatesAutoresizingMaskIntoConstraints="NO" id="bth-CW-DSz">
+                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="50" id="0nm-J3-tpI"/>
+                                                    <constraint firstAttribute="height" constant="50" id="T2z-pQ-bxF"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="70℉" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x4r-Xy-5s8">
+                                                <rect key="frame" x="55" y="0.0" width="145.5" height="50"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="70"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="VxU-op-rEQ" secondAttribute="bottom" constant="8" id="7Ue-5e-AHQ"/>
+                                    <constraint firstItem="vfa-OI-lNM" firstAttribute="top" secondItem="15b-5E-qXt" secondAttribute="top" constant="15" id="Gq0-A2-x5G"/>
+                                    <constraint firstAttribute="height" constant="175" id="NUs-E0-gC9"/>
+                                    <constraint firstItem="VxU-op-rEQ" firstAttribute="top" secondItem="7Hc-Ss-ViC" secondAttribute="bottom" constant="10" id="OCI-wV-tYa"/>
+                                    <constraint firstItem="vfa-OI-lNM" firstAttribute="leading" secondItem="15b-5E-qXt" secondAttribute="leading" constant="15" id="PUB-6f-VnW"/>
+                                    <constraint firstItem="VxU-op-rEQ" firstAttribute="centerX" secondItem="15b-5E-qXt" secondAttribute="centerX" id="QMC-we-lKW"/>
+                                    <constraint firstItem="KCr-CE-jkI" firstAttribute="leading" secondItem="vfa-OI-lNM" secondAttribute="leading" id="sFn-CP-4eR"/>
+                                    <constraint firstItem="KCr-CE-jkI" firstAttribute="top" secondItem="vfa-OI-lNM" secondAttribute="bottom" constant="8" id="wsd-cU-6KN"/>
+                                    <constraint firstItem="7Hc-Ss-ViC" firstAttribute="centerX" secondItem="VxU-op-rEQ" secondAttribute="centerX" id="wwD-aM-g3K"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="15b-5E-qXt" secondAttribute="trailing" id="3YJ-fQ-eFi"/>
                             <constraint firstItem="Wro-Ug-IyJ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Cyc-Q8-TVY"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Wro-Ug-IyJ" secondAttribute="trailing" id="dpU-1T-1Fs"/>
                             <constraint firstAttribute="bottom" secondItem="Wro-Ug-IyJ" secondAttribute="bottom" id="dt1-8H-9E8"/>
+                            <constraint firstItem="15b-5E-qXt" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="jt8-W0-c5x"/>
                             <constraint firstItem="Wro-Ug-IyJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="v2u-VB-V24"/>
+                            <constraint firstItem="15b-5E-qXt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="yMB-g6-xPN"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="googleMapContainerView" destination="Wro-Ug-IyJ" id="4vb-QD-Db7"/>
+                        <outlet property="tempratureLable" destination="x4r-Xy-5s8" id="xS2-0y-GpR"/>
+                        <outlet property="weatherDescription" destination="7Hc-Ss-ViC" id="bbB-k9-wdj"/>
+                        <outlet property="weatherImageView" destination="bth-CW-DSz" id="VMH-q9-3Ly"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -38,4 +102,7 @@
             <point key="canvasLocation" x="-1" y="102"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="sunny" width="170.66667175292969" height="170.66667175292969"/>
+    </resources>
 </document>
